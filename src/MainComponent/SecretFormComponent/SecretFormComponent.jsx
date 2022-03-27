@@ -15,8 +15,9 @@ function SecretFormComponent(props){;
     }
     
     const submitNewSecret = (e)=>{
-            e.preventDefault()
+            e.preventDefault();
             props.createNewSecret(newSecret)
+            props.revealSecrets()
         }
             //ENDLESS VALIDATION IF CHAINS GO HERE
     

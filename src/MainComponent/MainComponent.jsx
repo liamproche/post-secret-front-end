@@ -7,7 +7,6 @@ import './MainComponent.css'
 function MainComponent(){;
     const [showSecrets, setShowSecrets] = useState(false)
     const[secrets, setSecrets] = useState([])
-    
     const getSecrets = async()=>{
         try{
             const secrets = await fetch("http://localhost:3001/secrets")
@@ -41,10 +40,11 @@ function MainComponent(){;
     const revealSecrets=()=>{
         setShowSecrets(true)
     }
+
     useEffect(getSecrets, [])
     return(
         <main className="MainComponent" id="main-component">
-            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent></SecretsComponent>}
+            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets}></SecretsComponent>}
         </main>
     )  
 }
