@@ -36,7 +36,31 @@ function MainComponent(){;
                 console.log("There was a db error creating the secret")
             }
         }
+        const deleteSecret= async (id)=>{
+            try{
+                console.log(`deleting${id}`)
+                const apiResponse = await fetch(`http://localhost:3001/secrets/${id}`,{
+                    method: "DELETE"
+                })
+                const parsedReponse = await apiResponse.json()
+                if(parsedReponse.success){
+                    setSecrets(
+                        secrets.filter((secret)=>{
+                            //function to determine if animal in array id matches delete animal id
+                            return secret._id !== id
+                        })
+                    )
+                }
+                else{
+                    console.log('deleting was not successful')
+                }
+            }catch(err){
+                console.log('there was a problem with the api call')
+                console.log(err)
+            }
 
+
+    }
     const revealSecrets=()=>{
         setShowSecrets(true)
     }
@@ -44,7 +68,7 @@ function MainComponent(){;
     useEffect(getSecrets, [])
     return(
         <main className="MainComponent" id="main-component">
-            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets}></SecretsComponent>}
+            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets} deleteSecret={deleteSecret}></SecretsComponent>}
         </main>
     )  
 }

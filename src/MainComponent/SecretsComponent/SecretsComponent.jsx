@@ -4,11 +4,10 @@ import IndividualSecretComponent from './IndividualSecretComponent/IndividualSec
 
 
 function SecretsComponent(props){
-    console.log(props.secrets)
     return(
         <section className="SecretsComponent" id="secret-component">
             {props.secrets.map((secret)=>{
-                return <IndividualSecretComponent key={secret._id} secret={secret}></IndividualSecretComponent>
+                return <IndividualSecretComponent key={secret._id} secret={secret} deleteSecret={props.deleteSecret}></IndividualSecretComponent>
             })}
         </section>
     )  
