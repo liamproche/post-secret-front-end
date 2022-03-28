@@ -8,7 +8,7 @@ function IndividualSecretComponent(props){;
             <div className="index-single-animal">
                 <h2>Secret: {props.secret.secret}</h2>
                 <p>Rating: {props.secret.rating}</p>
-                <SecretControlsComponent secret={props.secret} deleteSecret={props.deleteSecret}></SecretControlsComponent>
+                <SecretControlsComponent secret={props.secret} deleteSecret={props.deleteSecret} editSecret={props.editSecret}></SecretControlsComponent>
             </div>
         </div>
     )  

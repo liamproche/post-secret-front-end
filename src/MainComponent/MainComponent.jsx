@@ -59,8 +59,24 @@ function MainComponent(){;
                 console.log(err)
             }
 
-
     }
+    const editSecret = async (secretToEdit)=>{
+            const updateSecretResponse = await fetch(`http://localhost:3001/secrets/${secretToEdit._id}/`,{
+                method: "PUT",
+                body: JSON.stringify(secretToEdit),
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+            const parsedResponse = await updateSecretResponse.json()
+            if(parsedResponse.success){
+                const newSecrets = secrets.map(secret=>secret._id === secretToEdit._id ? secretToEdit: secret)
+                setSecrets(newSecrets)
+            }else{
+                console.log(parsedResponse.data)
+            }
+    
+        }
     const revealSecrets=()=>{
         setShowSecrets(true)
     }
@@ -68,7 +84,7 @@ function MainComponent(){;
     useEffect(getSecrets, [])
     return(
         <main className="MainComponent" id="main-component">
-            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets} deleteSecret={deleteSecret}></SecretsComponent>}
+            {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets} deleteSecret={deleteSecret} editSecret={editSecret}></SecretsComponent>}
         </main>
     )  
 }
