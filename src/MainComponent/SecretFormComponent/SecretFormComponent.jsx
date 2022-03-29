@@ -5,13 +5,10 @@ function SecretFormComponent(props){;
     const [newSecret, setNewSecret] = useState({})
     //function to handle change of text in input fields uses e-target so can be assigned to any input field
     const handleInputChange=(e)=>{
-        console.log(newSecret)
         //sets new secret variable 
         setNewSecret({
-           secret: e.target.value,
-           url: url
+           secret: e.target.value
         })
-        console.log(newSecret.url)
     }
     const submitNewSecret = (e)=>{
             e.preventDefault();
@@ -31,6 +28,10 @@ function SecretFormComponent(props){;
         })
         const parsedResponse = await imgUplaodResponse.json()
         setUrl(parsedResponse.url)
+        setNewSecret({
+            ...newSecret,
+            url: parsedResponse.url
+        })
     }
     return(
         <div className="SecretFormComponent" id="secret-form">

@@ -1,3 +1,4 @@
+
 import './SecretControlsComponent/SecretControlComponent'
 import './IndividualSecretComponent.scss'
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,6 +29,7 @@ function IndividualSecretComponent(props){
                     </div>
                     <div className="card back">
                         <div className="card-body d-flex justify-content-center align-items-center">
+                            <p>{props.secret.secret}</p>
                             <SecretControlsComponent secret={props.secret} deleteSecret={props.deleteSecret} editSecret={props.editSecret}></SecretControlsComponent>
                         </div>
                     </div>
