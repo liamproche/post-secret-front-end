@@ -6,6 +6,7 @@ import SecretControlsComponent from './SecretControlsComponent/SecretControlComp
 
 
 function IndividualSecretComponent(props){
+    console.log(props.secret)
     return(
         <div className="IndividualSecretComponent" id="individual-secret">
             {/* <div className="index-single-secret" style={{background: `url(${props.secret.url})`}}>
@@ -15,7 +16,7 @@ function IndividualSecretComponent(props){
             </div> */}
         
             <div className="flip-card-outer">
-                <div className={cn("flip-card-inner", {"hover-trigger": props.secret.secret})}>
+                <div className={cn("flip-card-inner", {"hover-trigger": props.secret})}>
                     <div className="card front">
                         <div className="card-body d-flex justify-content-center align-items-center">
                             {props.secret.url ? 
@@ -27,7 +28,7 @@ function IndividualSecretComponent(props){
                     </div>
                     <div className="card back">
                         <div className="card-body d-flex justify-content-center align-items-center">
-                            <p className="card-text fs-1 fw-bold">Secret goes here</p>
+                            <SecretControlsComponent secret={props.secret} deleteSecret={props.deleteSecret} editSecret={props.editSecret}></SecretControlsComponent>
                         </div>
                     </div>
                 </div>
