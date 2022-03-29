@@ -25,7 +25,6 @@ function SecretFormComponent(props){;
         const data = new FormData();
         data.append('file', image);
         data.append('upload_preset', 'ym3qlxdj')
-        // data.append('cloud_name', process.env.IMG_CLOUD_NAME)
         const imgUplaodResponse = await fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_IMG_CLOUD}/image/upload`, {
             method: 'POST',
             body: data
@@ -42,12 +41,12 @@ function SecretFormComponent(props){;
                     <button className="btn btn-outline-secondary" type="submit">Submit Secret</button>
                 </div>
             </form>
-            <input type="file" name="file" onChange={(e)=>{setImage(e.target.files[0])}}></input>
+            <input type="file" name="file" onChange={(e)=>setImage(e.target.files[0])}></input>
             <div>
                 <p>Image Name: {image.name}</p>
                 <p>File Type: {image.type}</p>
                 <p>Size: {image.size}</p>
-                <button onClick={uploadImage}>Add Artwork</button>
+                <button onClick={uploadImage}>Upload Image</button>
                 </div>
                 <div>
                     <p>Here is the image:</p>

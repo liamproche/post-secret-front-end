@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import './SecretsComponent.css'
+
 import IndividualSecretComponent from './IndividualSecretComponent/IndividualSecretComponent'
 
 

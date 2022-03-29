@@ -13,3 +13,11 @@ COMPONENT LAYOUT
                     -Current Rating
                     -Rerate(anchor links no submit button, submit happens on button click)
                     -Delete Secret Option(button or a-link)
+
+
+FLIP CARDS IN REACT
+    -Front should be uploaded image or black
+    -Back should be secret & rate/delete options
+
+PSEUDO-CODE
+    -Display card o
