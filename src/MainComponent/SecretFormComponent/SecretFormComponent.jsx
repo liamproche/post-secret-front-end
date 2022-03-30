@@ -51,7 +51,7 @@ function SecretFormComponent(props){;
                     <button id="submit-button" className="btn btn-outline-secondary" type="submit">Submit Secret</button>
                 </div>
             </form>
-            <button id="add-artwork-button" onClick={showModal}>Modal open</button>
+            <button id="add-artwork-button" onClick={showModal}>Add Artwork</button>
             <Modal show={modalOpen}>
                 <Modal.Header>Select Artwork</Modal.Header>
                 <Modal.Body>

@@ -105,6 +105,7 @@ function MainComponent(){;
     useEffect(getSecrets, [])
     return(
         <main className="MainComponent" id="main-component">
+            <h1 className="page-title">Post a Secret</h1>
             {!showSecrets ? <SecretFormComponent secrets={secrets} revealSecrets={revealSecrets} createNewSecret={createNewSecret}></SecretFormComponent> : <SecretsComponent secrets={secrets} deleteSecret={deleteSecret} editSecret={editSecret}></SecretsComponent>}
         </main>
     )  
