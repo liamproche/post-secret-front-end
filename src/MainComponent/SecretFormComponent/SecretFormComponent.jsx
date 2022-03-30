@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css";
 import './SecretFormComponent.css'
 
 function SecretFormComponent(props){;
@@ -15,7 +16,7 @@ function SecretFormComponent(props){;
             props.createNewSecret(newSecret)
             props.revealSecrets()
         }
-            //ENDLESS VALIDATION IF CHAINS GO HERE
+    //ENDLESS VALIDATION IF CHAINS GO HERE
     const [image, setImage] = useState("");
     const [url, setUrl] = useState("")
     const uploadImage = async ()=>{
@@ -48,11 +49,11 @@ function SecretFormComponent(props){;
                 <p>File Type: {image.type}</p>
                 <p>Size: {image.size}</p>
                 <button onClick={uploadImage}>Upload Image</button>
-                </div>
-                <div>
-                    <p>Here is the image:</p>
-                    <img src={url}/>
-                </div>
+            </div>
+            <div>
+                <p>Here is the image:</p>
+                <img src={url}/>
+            </div>
         </div>
     )  
 }
