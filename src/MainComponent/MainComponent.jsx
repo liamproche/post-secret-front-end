@@ -9,7 +9,7 @@ function MainComponent(){;
     const[secrets, setSecrets] = useState([])
     const getSecrets = async()=>{
         try{
-            const secrets = await fetch("http://localhost:3001/secrets")
+            const secrets = await fetch("https://post-a-secret-backend.herokuapp.com/secrets")
             const parsedSecrets = await secrets.json()    
             const allSecrets = parsedSecrets.data
             const chosenSecrets=[]
@@ -41,7 +41,7 @@ function MainComponent(){;
             }
         }
         const createNewSecret = async (newSecret)=>{
-            const newSecretResponse = await fetch("http://localhost:3001/secrets",{
+            const newSecretResponse = await fetch("https://post-a-secret-backend.herokuapp.com/secrets",{
                 method: "POST",
                 body: JSON.stringify(newSecret),
                 headers: {
@@ -60,7 +60,7 @@ function MainComponent(){;
         const deleteSecret= async (id)=>{
             try{
                 console.log(`deleting${id}`)
-                const apiResponse = await fetch(`http://localhost:3001/secrets/${id}`,{
+                const apiResponse = await fetch(`https://post-a-secret-backend.herokuapp.com/secrets/${id}`,{
                     method: "DELETE"
                 })
                 const parsedReponse = await apiResponse.json()
