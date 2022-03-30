@@ -1,7 +1,4 @@
 import { useState } from 'react'
-
-
-//New Modal imports
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './SecretFormComponent.css'
@@ -44,7 +41,7 @@ function SecretFormComponent(props){;
     }
     return(
         <div className="SecretFormComponent" id="secret-form-component">
-            <h1>Please enter a secret:</h1>
+            <h1 id="user-instructions">Submit a secret to access the secret database</h1>
             <form id="secret-form" className="input-group mb-3" onSubmit={submitNewSecret}>
                 <input id="secret-input"  type="text" className="form-control" placeholder="What's your secret?" aria-label="Secret" aria-describedby="basic-addon2" name="secret" required={true} minLength={4} onChange={handleInputChange}/>
                 <div className="input-group-append">
