@@ -55,7 +55,7 @@ function SecretFormComponent(props){;
         <div className="SecretFormComponent" id="secret-form">
             <h1>Please enter a secret:</h1>
             <form className="input-group mb-3" onSubmit={submitNewSecret}>
-                <input type="text" className="form-control" placeholder="Enter a secret" aria-label="Secret" aria-describedby="basic-addon2" name="secret" onChange={handleInputChange}/>
+                <input type="text" className="form-control" placeholder="What's your secret?" aria-label="Secret" aria-describedby="basic-addon2" name="secret" required="true" minLength={4} onChange={handleInputChange}/>
                 <div className="input-group-append">
                     <button className="btn btn-outline-secondary" type="submit">Submit Secret</button>
                 </div>
