@@ -1,8 +1,25 @@
 import { useState } from 'react'
+
+
+//New Modal imports
+import Modal from "react-bootstrap/Modal";
+import ReactDOM from 'react-dom';
+import ModalBody from 'react-bootstrap/ModalBody';
+import ModalHeader from "react-bootstrap/ModalHeader";
+import ModalFooter from "react-bootstrap/ModalFooter";
+import ModalTitle from "react-bootstrap/ModalTitle";
+
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import './SecretFormComponent.css'
 
+
 function SecretFormComponent(props){;
+    const [modalOpen, setModalOpen] = useState(false)
+    const showModal=()=>{
+        setModalOpen(!modalOpen)
+    }
+    
     const [newSecret, setNewSecret] = useState({})
     //function to handle change of text in input fields uses e-target so can be assigned to any input field
     const handleInputChange=(e)=>{
@@ -43,17 +60,19 @@ function SecretFormComponent(props){;
                     <button className="btn btn-outline-secondary" type="submit">Submit Secret</button>
                 </div>
             </form>
-            <input type="file" name="file" onChange={(e)=>setImage(e.target.files[0])}></input>
-            <div>
-                <p>Image Name: {image.name}</p>
-                <p>File Type: {image.type}</p>
-                <p>Size: {image.size}</p>
-                <button onClick={uploadImage}>Upload Image</button>
-            </div>
-            <div>
-                <p>Here is the image:</p>
-                <img src={url}/>
-            </div>
+            <button onClick={showModal}>Modal open</button>
+            <Modal show={modalOpen}>
+                <Modal.Header>Select Artwork</Modal.Header>
+                <Modal.Body>
+                    <input type="file" name="file" onChange={(e)=>setImage(e.target.files[0])}></input>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button onClick={()=>{uploadImage(); showModal()}}>Upload Image</button>
+                    <button onClick={showModal}>Close</button>
+                </Modal.Footer>
+            </Modal>
+
+
         </div>
     )  
 }

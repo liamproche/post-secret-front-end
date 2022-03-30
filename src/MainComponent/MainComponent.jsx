@@ -11,9 +11,30 @@ function MainComponent(){;
         try{
             const secrets = await fetch("http://localhost:3001/secrets")
             const parsedSecrets = await secrets.json()    
-                setSecrets(parsedSecrets.data)
-                console.log('secrets set')
-            }catch(err){
+            const allSecrets = parsedSecrets.data
+            const chosenSecrets=[]
+            function pickFirstSecret(){
+                chosenSecrets.push(allSecrets[Math.floor(Math.random() * allSecrets.length)])
+            }
+            function pickSecondSecret(){
+                let secondSecret = allSecrets[Math.floor(Math.random() * allSecrets.length)]
+                while(chosenSecrets.includes(secondSecret)){
+                    pickSecondSecret()
+                }
+                chosenSecrets.push(secondSecret)
+            }
+            function pickThirdSecret(){
+                let thirdSecret = allSecrets[Math.floor(Math.random() * allSecrets.length)]
+                while(chosenSecrets.includes(thirdSecret)){
+                    pickThirdSecret()
+                }
+                chosenSecrets.push(thirdSecret)
+            }
+            pickFirstSecret();
+            pickSecondSecret();
+            pickThirdSecret();
+            setSecrets(chosenSecrets)
+        }catch(err){
                 console.log(err)
                 //user message goes here
                 //TODO: Figure out user message on API Call fuck-ups

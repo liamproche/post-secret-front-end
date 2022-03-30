@@ -25,11 +25,11 @@ function IndividualSecretComponent(props){
                         <div className="card-body d-flex justify-content-center align-items-center" id="image-container-div">
                             <img src={props.secret.url}></img>
                         </div>
-                            :
+                        :
                         <div className="card-body d-flex justify-content-center align-items-center">
                             <p className="card-text fs-1 fw-bold">Secret</p>
                         </div>
-                            }
+                        }
                     </div>
                     <div className="card back">
                         <div id="back-conatiner" className="card-body d-flex justify-content-center align-items-center">
