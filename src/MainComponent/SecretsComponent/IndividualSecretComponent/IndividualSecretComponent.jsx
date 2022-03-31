@@ -34,7 +34,7 @@ function IndividualSecretComponent(props){
                     <div id="full-back-container" className="card back">
                         <div id="back-conatiner" className="card-body d-flex justify-content-center align-items-center">
                             <div id="secret-grid-container">
-                                <p className="card-text fs-1">"{props.secret.secret}"</p>
+                                <p id="sercret-secret-text" className="card-text fs-1">"{props.secret.secret}"</p>
                             </div>
                             <h6>Current Rating: {updateSecret.rating}</h6>
                                 <SecretControlsComponent secret={props.secret} deleteSecret={props.deleteSecret} editSecret={props.editSecret} adjustRating={adjustRating}></SecretControlsComponent>
