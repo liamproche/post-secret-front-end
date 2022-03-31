@@ -45,22 +45,24 @@ function SecretFormComponent(props){;
             <form id="secret-form" className="input-group mb-3" onSubmit={submitNewSecret}>
                 <input id="secret-input"  type="text" className="form-control" placeholder="What's your secret?" aria-label="Secret" aria-describedby="basic-addon2" name="secret" required={true} minLength={4} onChange={handleInputChange}/>
                 <div className="input-group-append">
-                    <button id="submit-button" className="btn btn-outline-secondary" type="submit">Submit Secret</button>
                 </div>
             </form>
-            <button id="add-artwork-button" onClick={showModal}>Add Artwork</button>
-            <Modal show={modalOpen}>
-                <Modal.Header>Select Artwork</Modal.Header>
+            <div id="button-container">
+                <button id="add-artwork-button" className="button" onClick={showModal}>Add Artwork</button>
+                <button id="submit-button" className="button" onClick={submitNewSecret}>Submit Secret</button>
+            </div>
+            <Modal className="modal" show={modalOpen}>
+                <Modal.Header id="modal-header-text">Select Artwork</Modal.Header>
                 <Modal.Body>
-                    <input type="file" name="file" onChange={(e)=>setImage(e.target.files[0])}></input>
+                    <label className="styled-input">
+                        <input type="file" name="file" onChange={(e)=>setImage(e.target.files[0])}></input>
+                    </label>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button onClick={()=>{uploadImage(); showModal()}}>Upload Image</button>
-                    <button onClick={showModal}>Close</button>
+                    <button id="upload-button" className="button" onClick={()=>{uploadImage(); showModal()}}>Upload Image</button>
+                    <button id="close-button" className="button" onClick={showModal}>Close</button>
                 </Modal.Footer>
             </Modal>
-
-
         </div>
     )  
 }

@@ -14,7 +14,7 @@ function SecretControlsComponent(props){;
                 <a href='#' onClick={props.adjustRating}>5</a>
             </div>
             <div id='delete-button-container'>
-                <button onClick={()=>props.deleteSecret(props.secret._id)}>Delete</button>
+                <button id="delete-button" onClick={()=>props.deleteSecret(props.secret._id)}>Delete</button>
             </div>
         </div>
     )  
