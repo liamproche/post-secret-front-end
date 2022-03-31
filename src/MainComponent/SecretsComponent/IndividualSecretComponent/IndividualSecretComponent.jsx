@@ -17,7 +17,7 @@ function IndividualSecretComponent(props){
         props.editSecret(updateSecret)
     }
     return(
-        <div className="IndividualSecretComponent" id="individual-secret">
+        <div className="individual-secret-component" id="individual-secret">
             <div className="flip-card-outer">
                 <div className={cn("flip-card-inner", {"hover-trigger": props.secret})}>
                     <div className="card front">
