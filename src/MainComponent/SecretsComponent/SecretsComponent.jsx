@@ -15,7 +15,7 @@ function SecretsComponent(props){
             })}
             </div>
             <div id="home-link-container">
-                <h2 onClick={reloadSite}>Submit a new secret</h2>
+                <h2 id="return-home-link" onClick={reloadSite}>Submit a new secret</h2>
             </div>
     
         </section>

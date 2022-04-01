@@ -49,9 +49,7 @@ function MainComponent(){;
                 }
             })
             const parsedReponse = await newSecretResponse.json()
-            console.log(parsedReponse)
             if(parsedReponse.success){
-                console.log('Secret was created')
             //if it wasn't a success
             }else{
                 console.log("There was a db error creating the secret")
@@ -59,7 +57,6 @@ function MainComponent(){;
         }
         const deleteSecret= async (id)=>{
             try{
-                console.log(`deleting${id}`)
                 const apiResponse = await fetch(`https://post-a-secret-backend.herokuapp.com/secrets/${id}`,{
                     method: "DELETE"
                 })
@@ -76,12 +73,12 @@ function MainComponent(){;
                     console.log('deleting was not successful')
                 }
             }catch(err){
-                console.log('there was a problem with the api call')
                 console.log(err)
             }
 
     }
     const editSecret = async (secretToEdit)=>{
+        try{    
             const updateSecretResponse = await fetch(`https://post-a-secret-backend.herokuapp.com/secrets/${secretToEdit._id}/`,{
                 method: "PUT",
                 body: JSON.stringify(secretToEdit),
@@ -96,12 +93,13 @@ function MainComponent(){;
             }else{
                 console.log(parsedResponse.data)
             }
-    
+        }catch(err){
+            console.log(err)
         }
+    }
     const revealSecrets=()=>{
         setShowSecrets(true)
     }
-
     useEffect(getSecrets, [])
     return(
         <main className="MainComponent" id="main-component">

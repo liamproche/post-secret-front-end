@@ -9,7 +9,6 @@ function SecretFormComponent(props){;
     const showModal=()=>{
         setModalOpen(!modalOpen)
     }
-    
     const [newSecret, setNewSecret] = useState({})
     const handleInputChange=(e)=>{
         setNewSecret({
@@ -22,22 +21,26 @@ function SecretFormComponent(props){;
             props.revealSecrets()
         }
     //ENDLESS VALIDATION IF CHAINS GO HERE
-    const [image, setImage] = useState("");
-    const [url, setUrl] = useState("")
-    const uploadImage = async ()=>{
-        const data = new FormData();
-        data.append('file', image);
-        data.append('upload_preset', 'ym3qlxdj')
-        const imgUplaodResponse = await fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_IMG_CLOUD}/image/upload/`, {
-            method: 'POST',
-            body: data
-        })
-        const parsedResponse = await imgUplaodResponse.json()
-        setUrl(parsedResponse.url)
-        setNewSecret({
-            ...newSecret,
-            url: parsedResponse.url
-        })
+        const [image, setImage] = useState("");
+        const [url, setUrl] = useState("")
+        const uploadImage = async ()=>{
+        try{
+            const data = new FormData();
+            data.append('file', image);
+            data.append('upload_preset', 'ym3qlxdj')
+            const imgUplaodResponse = await fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_IMG_CLOUD}/image/upload/`, {
+                method: 'POST',
+                body: data
+            })
+            const parsedResponse = await imgUplaodResponse.json()
+            setUrl(parsedResponse.url)
+            setNewSecret({
+                ...newSecret,
+                url: parsedResponse.url
+            })
+        }catch(err){
+            console.log(err)
+        }
     }
     return(
         <div className="SecretFormComponent" id="secret-form-component">
