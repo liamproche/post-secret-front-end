@@ -16,23 +16,18 @@ function MainComponent(){;
             function pickFirstSecret(){
                 chosenSecrets.push(allSecrets[Math.floor(Math.random() * allSecrets.length)])
             }
-            function pickSecondSecret(){
-                let secondSecret = allSecrets[Math.floor(Math.random() * allSecrets.length)]
-                while(chosenSecrets.includes(secondSecret)){
-                    pickSecondSecret()
+            function pickNextSecret(){
+                let nextSecret = allSecrets[Math.floor(Math.random() * allSecrets.length)]
+                while(chosenSecrets.includes(nextSecret)){
+                    pickNextSecret()
                 }
-                chosenSecrets.push(secondSecret)
-            }
-            function pickThirdSecret(){
-                let thirdSecret = allSecrets[Math.floor(Math.random() * allSecrets.length)]
-                while(chosenSecrets.includes(thirdSecret)){
-                    pickThirdSecret()
-                }
-                chosenSecrets.push(thirdSecret)
+                chosenSecrets.push(nextSecret)
             }
             pickFirstSecret();
-            pickSecondSecret();
-            pickThirdSecret();
+            pickNextSecret();
+            pickNextSecret();
+            pickNextSecret();
+            pickNextSecret();
             setSecrets(chosenSecrets)
         }catch(err){
                 console.log(err)
