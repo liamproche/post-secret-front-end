@@ -31,8 +31,6 @@ function MainComponent(){;
             setSecrets(chosenSecrets)
         }catch(err){
                 console.log(err)
-                //user message goes here
-                //TODO: Figure out user message on API Call fuck-ups
             }
         }
         const createNewSecret = async (newSecret)=>{
@@ -59,7 +57,6 @@ function MainComponent(){;
                 if(parsedReponse.success){
                     setSecrets(
                         secrets.filter((secret)=>{
-                            //function to determine if animal in array id matches delete animal id
                             return secret._id !== id
                         })
                     )
