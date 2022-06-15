@@ -39,7 +39,7 @@
             <li>Current rating</li>
             <li>Way to change rating</li>
         </ul>
-        <li>-Delete secret forever button</li>
+        <li>Delete secret forever button</li>
     </ul>
     <li>When user clicks way to change rating (thinking a tags numbered 1-10), displayed rating appears on the page</li>
     <li>When user clicks delete secret button, secret is deleted from database and disappears from page</li>
@@ -95,8 +95,3 @@
         <li><s>Notes to myself</s></li>
     </ul>
 </ul>
-
-
-
-DEPLOYMENT LINK:
--https://post-a-secret-front-end.herokuapp.com/
