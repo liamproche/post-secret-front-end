@@ -27,19 +27,20 @@
 <ul>
     <li>When a user first accesses the site they should see:</li>
         <ul>
-            <li>-enter a secret message</li>
-            <li>text input field to enter a secret (placeholder "Enter a secret")</li>
-            <li>button to submit secret</li>
+            <li>Enter a secret message</li>
+            <li>Text input field to enter a secret (placeholder "Enter a secret")</li>
+            <li>Button to submit secret</li>
         </ul>
-    <li>When a user enters a secret and hits the submit button</li>
-    <li>Button, text input field and message disappear</li>
-    <li>5 secrets from the database apear each with</li>
+    <li>When a user enters a secret and hits the submit button:</li>
+    <ul>
+        <li>Button, text input field and message disappear</li>
+        <li>5 secrets from the database apear each with:</li>
     <ul>
         <li>Rating component</li>
-            <ul>
-                <li>Current rating</li>
-                <li>Way to change rating</li>
-            </ul>
+        <ul>
+            <li>Current rating</li>
+            <li>Way to change rating</li>
+        </ul>
         <li>-Delete secret forever button</li>
     </ul>
     <li>When user clicks way to change rating (thinking a tags numbered 1-10), displayed rating appears on the page</li>
