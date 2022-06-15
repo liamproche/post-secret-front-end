@@ -34,9 +34,7 @@
     <li>When a user enters a secret and hits the submit button:</li>
     <ul>
         <li>Button, text input field and message disappear</li>
-        <li>5 secrets from the database apear each with:</li>
-    <ul>
-        <li>Rating component</li>
+        <li>5 secrets from the database apear each with rating component with:</li>
         <ul>
             <li>Current rating</li>
             <li>Way to change rating</li>
