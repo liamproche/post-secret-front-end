@@ -73,25 +73,3 @@
     <li><s>When submitting a secret user has option to upload background art that will appear on the front of the secret card</s></li>
     <li><s>Create public API (This may be super-easy)</s></li>
 </ul>
-
-<h2>Deployment Link:</h2>
-<a href="https://post-a-secret-front-end.herokuapp.com/">https://post-a-secret-front-end.herokuapp.com/</a>
-
-
-<h4>MVP Check</h4>
-<ul>
-    <li><s>Working fullstack application using the MERN stack</s></li>
-    <li><s>Adhere to MVC file structure ()views in React</s></li>
-    <li><s>At least one model with full CRUD</s></li>
-    <li><s>At least 3 react components defined in their own file structure (outside of #app.js)</s></li>
-    <li><s>Be deployed online and accessible to the public via heroku</s></li>
-    <li><s>2 git repos (front-end & back-end) *at least one push per day</s></li>
-    <li><s>A readme file with</s></li>
-    <ul>
-        <li><s>Explination of the technologies used</s></li>
-        <li><s>Approach taken</s></li>
-        <li><s>Unsolved problems</s></li>
-        <li><s>User stories</s></li>
-        <li><s>Notes to myself</s></li>
-    </ul>
-</ul>
